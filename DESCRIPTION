@@ -16,7 +16,8 @@ Depends:
 Imports:
     cli,
     fs,
-    lintr
+    lintr,
+    styler
 Suggests: 
     covr,
     devtools, 
