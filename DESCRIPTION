@@ -13,6 +13,10 @@ URL: https://github.com/alexym1/Rprecommit, https://alexym1.github.io/Rprecommit
 BugReports: https://github.com/alexym1/Rprecommit/issues
 Depends:
     R (>= 4.1.0)
+Imports:
+    cli,
+    fs,
+    lintr
 Suggests: 
     covr,
     devtools, 
@@ -25,4 +29,4 @@ VignetteBuilder:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

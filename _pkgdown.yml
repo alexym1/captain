@@ -7,5 +7,13 @@ authors:
   Alex Martinez:
     href: https://github.com/alexym1
 
+reference:
+- title: Configure
+  desc:  Handle .pre-commit-config file.
+  contents:
+  - create_precommit_file
+  - edit_precommit_file
+  - path_precommit_files
+
 development:
   mode: auto
