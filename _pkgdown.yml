@@ -1,0 +1,11 @@
+url: https://alexym1.github.io/Rprecommit
+
+template:
+  bootstrap: 5
+
+authors:
+  Alex Martinez:
+    href: https://github.com/alexym1
+
+development:
+  mode: auto

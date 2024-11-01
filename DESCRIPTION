@@ -1,0 +1,28 @@
+Package: Rprecommit
+Type: Package
+Title: Running precommit in R
+Version: 0.1.0
+Authors@R:
+    person(given = "Alex",
+           family = "MARTINEZ",
+           role = c("aut", "cre"),
+           email = "yahiaoui-martinez.alex@outlook.com")
+Description: add a short description of the package.
+License: MIT + file LICENSE
+URL: https://github.com/alexym1/Rprecommit, https://alexym1.github.io/Rprecommit
+BugReports: https://github.com/alexym1/Rprecommit/issues
+Depends:
+    R (>= 4.1.0)
+Suggests: 
+    covr,
+    devtools, 
+    knitr,
+    pkgdown,
+    renv, 
+    testthat
+VignetteBuilder:
+    knitr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1

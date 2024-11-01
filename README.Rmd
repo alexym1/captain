@@ -1,0 +1,76 @@
+---
+output: github_document
+always_allow_html: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Rprecommit <a href=#><img src='man/figures/logo.png' align="right" width="120" /></a>
+
+<!-- badges: start -->
+![](https://img.shields.io/badge/github%20version-0.1.0-orange.svg)
+[![R-CMD-check](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/main/graph/badge.svg)](https://app.codecov.io/gh/alexym1/Rprecommit?branch=main)
+<!-- badges: end -->
+
+> Running precommit in R
+
+
+## Overview
+
+Add a brief overview of the package here. What does it do? Why does it matter?
+
+## Installation
+
+The latest version can be installed from GitHub as follows: 
+
+```{r eval = FALSE}
+install.packages("devtools")
+devtools::install_github("alexym1/Rprecommit")
+```
+
+## Usage
+
+Read the `CONTRIBUTING.md` file for more information on how to use this package.
+Here a brief example of how to use the package:
+
+### Load renv
+
+```{r eval = FALSE}
+renv::restore()
+```
+
+
+### Check the package
+
+Add a new feature and check the quality of your package using the following code.
+
+```{r eval = FALSE}
+devtools::check()
+```
+
+
+### Build website
+
+Change the blank sticker located in `man/figures/logo.png` to your own sticker. Then, run the following code to build the website:
+
+
+```{r eval = FALSE}
+pkgdown::build_favicons()
+pkgdown::build_site()
+pkgdown::preview_site()
+```
+
+
+## Code of conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](https://alexym1.github.io/Rprecommit/CONTRIBUTING.html). By participating in this project you agree to abide by its terms.

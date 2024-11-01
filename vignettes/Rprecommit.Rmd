@@ -1,0 +1,16 @@
+---
+title: "Introduction to Rprecommit"
+output: rmarkdown::html_vignette
+description: >
+  Start here if this is your first time using Rprecommit.
+vignette: >
+  %\VignetteIndexEntry{Introduction to Rprecommit}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(collapse = T, comment = "#>")
+```
+
+A brief introduction to Rprecommit.
