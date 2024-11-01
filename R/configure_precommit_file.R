@@ -16,6 +16,7 @@
 #'
 #' @importFrom fs path_abs file_exists dir_ls
 #' @importFrom cli cli_alert_success cli_alert_danger cli_alert_info
+#' @importFrom utils file.edit
 #'
 #' @examples
 #' library(Rprecommit)
@@ -27,6 +28,7 @@ create_precommit_file <- function(filename = path_precommit_files(), force = FAL
 
   if(file_exists(path)){
     if(force){
+      file_copy(template_precommit_file(), filename, overwrite = TRUE)
       file.create(filename, showWarnings = FALSE)
       cli_alert_success("{filename} has been created.")
     } else {
@@ -40,7 +42,7 @@ create_precommit_file <- function(filename = path_precommit_files(), force = FAL
     cli_alert_success("inst folder has been created.")
   }
 
-  file.create(filename, showWarnings = FALSE)
+  file_copy(template_precommit_file(), filename, overwrite = FALSE)
   cli_alert_success("{filename} has been created.")
 }
 
@@ -66,6 +68,20 @@ edit_precommit_file <- function(){
   }
 
   file.edit(paths[index])
+}
+
+
+template_precommit_file <- function() {
+  lst <- lapply(path_precommit_files(), function(file){
+    tryCatch({
+      system.file(file, package = "Rprecommit")
+    }, error = function(e) "")
+  })
+
+  files <- unlist(lst)
+  template_path <- files[!(files %in% "")]
+
+  return(template_path)
 }
 
 
