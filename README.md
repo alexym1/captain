@@ -31,6 +31,15 @@ install.packages("devtools")
 devtools::install_github("alexym1/Rprecommit")
 ```
 
+## Usage
+
+### Initialize pre-commit
+
+``` bash
+apt-get install littler
+apt autoremove
+```
+
 ## Code of conduct
 
 Please note that this project is released with a [Contributor Code of

@@ -1,19 +1,17 @@
 repos:
   - repo: local
     hooks:
+    - id: renv
+      name: renv
+      description: Restore project library from a lockfile
+      entry: Rscript inst/hooks/restore_renv_deps.R
+      language: r
+  - repo: local
+    hooks:
     - id: styler
       name: styler
       description: style files with {styler}
       entry: Rscript inst/hooks/styler.R
       language: r
       files: '(\.[rR]profile|\.[rR]|\.[rR]md|\.[rR]nw|\.[qQ]md)$'
-      exclude: 'renv/activate\.R'
-  - repo: local
-    hooks:
-    - id: lintr
-      name: lintr
-      description: static code analysis with {lintr}
-      entry: Rscript inst/hooks/lintr.R
-      language: r
-      files: '(\.[rR]profile|\.R|\.Rmd|\.Rnw|\.r|\.rmd|\.rnw|\.[qQ]md)$'
       exclude: 'renv/activate\.R'
