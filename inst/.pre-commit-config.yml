@@ -3,15 +3,6 @@ repos:
     hooks:
     - id: renv
       name: renv
-      description: Restore project library from a lockfile
-      entry: Rscript inst/hooks/restore_renv_deps.R
+      description: Synchronize the project from the renv.lock
+      entry: Rscript inst/hooks/synchronize_project.R
       language: r
-  - repo: local
-    hooks:
-    - id: styler
-      name: styler
-      description: style files with {styler}
-      entry: Rscript inst/hooks/styler.R
-      language: r
-      files: '(\.[rR]profile|\.[rR]|\.[rR]md|\.[rR]nw|\.[qQ]md)$'
-      exclude: 'renv/activate\.R'

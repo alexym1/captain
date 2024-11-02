@@ -14,13 +14,10 @@
 #' * inst/.pre-commit-config.yml
 #' * inst/.pre-commit-config.yaml
 #'
-#' @importFrom fs path_abs file_exists dir_ls
-#' @importFrom cli cli_alert_success cli_alert_danger cli_alert_info
+#' @importFrom fs path_abs file_exists dir_ls file_copy
+#' @importFrom cli cli_alert_success cli_alert_danger cli_alert_info cli_div
 #' @importFrom utils file.edit
 #'
-#' @examples
-#' library(Rprecommit)
-#' create_precommit_file()
 #' @export
 create_precommit_file <- function(filename = path_precommit_files(), force = FALSE) {
   filename <- match.arg(filename)
@@ -52,16 +49,18 @@ edit_precommit_file <- function(){
   paths <- path_abs(path_precommit_files())
   index <- which(file_exists(paths) == TRUE)
 
+  cli_div(theme = list(span.emph = list(color = "orange")))
+
   if(length(index) == 0) {
     cli_alert_danger("No .pre-commit-config file found in current Project.")
-    cli_alert_info("Create a .pre-commit-config file using `create_precommit_file()`.")
+    cli_alert_info("Create a .pre-commit-config file using {.emph create_precommit_file()}.")
     return(invisible())
   }
 
   if(length(index) > 1){
     cli_alert_danger(
     "Multiple .pre-commit-config files found in current Project.
-    Keep only one file and run`edit_precommit_file()`
+    Keep only one file and run {.emph edit_precommit_file()}
     ")
     return(invisible())
   }

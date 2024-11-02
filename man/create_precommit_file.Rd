@@ -27,7 +27,3 @@ Only one file is allowed in the project and should be in the root directory or i
 \item inst/.pre-commit-config.yaml
 }
 }
-\examples{
-library(Rprecommit)
-create_precommit_file()
-}
