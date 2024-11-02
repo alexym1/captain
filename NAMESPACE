@@ -2,10 +2,12 @@
 
 export(create_precommit_file)
 export(edit_precommit_file)
+export(install_precommit)
 importFrom(cli,cli_alert_danger)
 importFrom(cli,cli_alert_info)
 importFrom(cli,cli_alert_success)
 importFrom(cli,cli_div)
+importFrom(cli,cli_h1)
 importFrom(fs,dir_ls)
 importFrom(fs,file_copy)
 importFrom(fs,file_exists)

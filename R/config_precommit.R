@@ -58,10 +58,8 @@ edit_precommit_file <- function(){
   }
 
   if(length(index) > 1){
-    cli_alert_danger(
-    "Multiple .pre-commit-config files found in current Project.
-    Keep only one file and run {.emph edit_precommit_file()}
-    ")
+    cli_alert_danger("Multiple .pre-commit-config files found in current Project.
+    Keep only one file and run {.emph edit_precommit_file()}")
     return(invisible())
   }
 
