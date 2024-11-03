@@ -2,9 +2,10 @@
 
 cli::cli_h1("Synchronize the project from the renv.lock")
 
-synchronized_renv <- renv::status()
+status <- renv::status()
+print(status$synchronized)
 
-if(synchronized_renv$synchronized == TRUE){
+if(is.null(status$synchronized) || status$synchronized == TRUE){
   cli::cli_alert_success("Restore project library from a lockfile")
   quit(save = "no", status = 0, runLast = FALSE)
 }

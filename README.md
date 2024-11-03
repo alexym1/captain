@@ -17,10 +17,11 @@ coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/master/graph/badge.svg
 
 `Rprecommit` is a package that allows you to run pre-commit checks in R.
 This package is inspired by the package
-[lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit/tree/9525a2e1bb5fd00c813e2bd299a41ddbf915eddb).`Rprecommit`
-is designed to run pre-commit without any python dependencies. The
-package is still under development and new features will be added in the
-future.
+[lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit).`Rprecommit`
+is designed to run pre-commit without any python dependencies.
+
+The package is still under development and new features will be added in
+the future.
 
 ## Installation
 
@@ -33,11 +34,28 @@ devtools::install_github("alexym1/Rprecommit")
 
 ## Usage
 
-### Initialize pre-commit
+### Initialize pre-commit framework
 
-``` bash
-apt-get install littler
-apt autoremove
+``` r
+Rprecommit::install_precommit()
+```
+
+### Add new hooks
+
+Editing the `.pre-commit-config` file
+
+``` r
+Rprecommit::edit_precommit_config()
+# repos:
+#   - repo: local
+#     hooks:
+#       - id: renv
+#         name: Synchronize project from renv.lock
+#         description: Synchronize the project from the renv.lock
+#         entry: Rscript inst/pre-commit/hooks/synchronize_project.R
+#         language: r
+#         additional_dependencies: [cli]
+#         pass_filenames: false
 ```
 
 ## Code of conduct

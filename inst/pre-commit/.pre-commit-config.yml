@@ -6,3 +6,5 @@ repos:
         description: Synchronize the project from the renv.lock
         entry: Rscript inst/pre-commit/hooks/synchronize_project.R
         language: r
+        additional_dependencies: [cli]
+        pass_filenames: false

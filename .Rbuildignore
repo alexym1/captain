@@ -10,5 +10,5 @@
 ^LICENSE\.md$
 ^NEWS\.md$
 ^codecov\.yml$
-^inst/.pre-commit-config.yml$
-^inst/.pre-commit-config.yaml$
+^inst/pre-commit/.pre-commit-config.yml$
+^inst/pre-commit/.pre-commit-config.yaml$
