@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: renv
+        name: Synchronize project from renv.lock
+        description: Synchronize the project from the renv.lock
+        entry: Rscript inst/pre-commit/hooks/synchronize_project.R
+        language: r

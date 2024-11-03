@@ -4,7 +4,7 @@
 #'
 #' @param force overwrite the file if it already exists
 #'
-#' @importFrom fs file_copy
+#' @importFrom fs file_copy dir_copy
 #' @importFrom cli cli_alert_success cli_div cli_h1 cli_alert_danger
 #'
 #' @export
@@ -18,24 +18,37 @@ install_precommit <- function(force = FALSE) {
     return(invisible())
   })
 
-  path <- file.path(root, ".git", "hooks", "pre-commit")
+  path_folder <- file.path(root, "inst", "pre-commit")
+  path_file <- file.path(root, ".git", "hooks", "pre-commit")
 
   cli_div(theme = list(span.emph = list(color = "orange")))
 
-  if(file_exists(path)){
+  if(file_exists(path_folder) | file_exists(path_file)){
     if(force){
-      file_copy(precommit_file(), path, overwrite = TRUE)
-      cli_alert_success("{.emph .git/hooks/pre-commit} has been created.")
+      install_deps(path_folder, path_file, overwrite = force)
     } else {
-      cli_alert_danger("{.emph .git/hooks/pre-commit} already exists. Use `force = TRUE` to overwrite.")
+      cli_alert_danger("{.emph some files already exists. Use `force = TRUE` to overwrite.")
     }
     return(invisible())
   }
 
-  file_copy(precommit_file(), path, overwrite = FALSE)
-  cli_alert_success("{.emph .git/hooks/pre-commit} has been created.")
+  install_deps(path_folder, path_file, overwrite = force)
+}
+
+
+precommit_folder <- function(){
+  system.file("pre-commit", package = "Rprecommit")
 }
 
 precommit_file <- function(){
-  system.file("pre-commit", package = "Rprecommit")
+  system.file("pre-commit/pre-commit", package = "Rprecommit")
+}
+
+install_deps <- function(path_folder, path_file, overwrite = FALSE){
+  dir_copy(precommit_folder(), path_folder, overwrite = overwrite)
+  cli_alert_success("{.emph inst/pre-commit} folder has been created.")
+
+  file_copy(precommit_file(), path_file, overwrite = overwrite)
+  # file.remove(file.path(root, "inst" ,"pre-commit", "pre-commit"))
+  cli_alert_success("{.emph .git/hooks/pre-commit} file has been created.")
 }

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pre-commit run --config "inst/pre-commit/.pre-commit-config.yml"
+
+exit 0
