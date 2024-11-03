@@ -17,7 +17,7 @@
 #' @importFrom utils file.edit
 #'
 #' @export
-create_precommit_file <- function(filename = path_precommit_files(), force = FALSE) {
+create_precommit_config <- function(filename = path_precommit_files(), force = FALSE) {
   filename <- match.arg(filename)
   path <- path_abs(filename)
 
@@ -41,9 +41,9 @@ create_precommit_file <- function(filename = path_precommit_files(), force = FAL
 }
 
 
-#' @rdname create_precommit_file
+#' @rdname create_precommit_config
 #' @export
-edit_precommit_file <- function(){
+edit_precommit_config <- function(){
   paths <- path_abs(path_precommit_files())
   index <- which(file_exists(paths) == TRUE)
 
@@ -51,13 +51,13 @@ edit_precommit_file <- function(){
 
   if(length(index) == 0) {
     cli_alert_danger("No .pre-commit-config file found in current Project.")
-    cli_alert_info("Create a .pre-commit-config file using {.emph create_precommit_file()}.")
+    cli_alert_info("Create a .pre-commit-config file using {.emph create_precommit_config()}.")
     return(invisible())
   }
 
   if(length(index) > 1){
-    cli_alert_danger("Multiple .pre-commit-config files found in current Project.
-    Keep only one file and run {.emph edit_precommit_file()}")
+    cli_alert_danger("Multiple .pre-commit-config.y*ml files found in current Project.
+    Keep only one file and run {.emph edit_precommit_config()}")
     return(invisible())
   }
 
@@ -81,7 +81,7 @@ template_precommit_file <- function() {
 
 path_precommit_files <- function() {
   c(
-    "inst/.pre-commit-config.yml",
-    "inst/.pre-commit-config.yaml"
+    "inst/pre-commit/.pre-commit-config.yml",
+    "inst/pre-commit/.pre-commit-config.yaml"
   )
 }
