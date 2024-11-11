@@ -21,8 +21,8 @@ create_precommit_config <- function(filename = path_precommit_files(), force = F
   filename <- match.arg(filename)
   path <- path_abs(filename)
 
-  if(file_exists(path)){
-    if(force){
+  if (file_exists(path)) {
+    if (force) {
       file_copy(template_precommit_file(), filename, overwrite = TRUE)
       cli_alert_success("{filename} has been created.")
     } else {
@@ -31,7 +31,7 @@ create_precommit_config <- function(filename = path_precommit_files(), force = F
     return(invisible())
   }
 
-  if(!any(grepl("inst", dir_ls()))){
+  if (!any(grepl("inst", dir_ls()))) {
     dir.create("inst")
     cli_alert_success("inst folder has been created.")
   }
@@ -43,19 +43,19 @@ create_precommit_config <- function(filename = path_precommit_files(), force = F
 
 #' @rdname create_precommit_config
 #' @export
-edit_precommit_config <- function(){
+edit_precommit_config <- function() {
   paths <- path_abs(path_precommit_files())
   index <- which(file_exists(paths) == TRUE)
 
   cli_div(theme = list(span.emph = list(color = "orange")))
 
-  if(length(index) == 0) {
+  if (length(index) == 0) {
     cli_alert_danger("No .pre-commit-config file found in current Project.")
     cli_alert_info("Create a .pre-commit-config file using {.emph create_precommit_config()}.")
     return(invisible())
   }
 
-  if(length(index) > 1){
+  if (length(index) > 1) {
     cli_alert_danger("Multiple .pre-commit-config.y*ml files found in current Project.
     Keep only one file and run {.emph edit_precommit_config()}")
     return(invisible())
@@ -66,10 +66,13 @@ edit_precommit_config <- function(){
 
 
 template_precommit_file <- function() {
-  lst <- lapply(path_precommit_files(), function(file){
-    tryCatch({
-      system.file(file, package = "Rprecommit")
-    }, error = function(e) "")
+  lst <- lapply(path_precommit_files(), function(file) {
+    tryCatch(
+      {
+        system.file(file, package = "Rprecommit")
+      },
+      error = function(e) ""
+    )
   })
 
   files <- unlist(lst)

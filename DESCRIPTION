@@ -15,14 +15,12 @@ Depends:
     R (>= 4.1.0)
 Imports:
     cli,
-    fs
-Suggests: 
     covr,
-    devtools, 
-    knitr,
-    pkgdown,
-    renv, 
-    testthat
+    fs,
+    lintr,
+    styler
+Suggests: 
+    devtools
 VignetteBuilder:
     knitr
 Encoding: UTF-8
