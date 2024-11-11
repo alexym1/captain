@@ -1,0 +1,11 @@
+name: 'Run precommit hooks'
+
+runs:
+  steps:
+    - name: run precommit hooks
+      shell: bash
+      run: |
+        Rscript -e 'install.packages("devtools")'
+        Rscript -e 'devtools::install()'
+        Rscript -e 'Rprecommit::install_precommit(force=TRUE)'
+        pre-commit run --config "inst/pre-commit/.pre-commit-config.yml" --all-files

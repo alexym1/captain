@@ -17,6 +17,7 @@ Imports:
     cli,
     covr,
     fs,
+    knitr,
     lintr,
     styler
 Suggests: 
