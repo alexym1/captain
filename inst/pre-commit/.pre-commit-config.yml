@@ -15,12 +15,12 @@ repos:
         language: r
         additional_dependencies: [cli, styler]
         pass_filenames: false
-      - id: linter
+      - id: lintr
         name: Format package with linter
         description: Linter checks style, syntax errors and possible semantic issues
         entry: Rscript inst/pre-commit/hooks/format_package_with_linter.R
         language: r
-        additional_dependencies: [cli, linter]
+        additional_dependencies: [cli, lintr]
         pass_filenames: false
       - id: covr
         name: Check coverage

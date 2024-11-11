@@ -30,7 +30,7 @@ install_precommit <- function(force = FALSE) {
     if (force) {
       install_deps(path_folder, path_file, overwrite = force)
     } else {
-      cli_alert_danger("{.emph some files already exists. Use `force = TRUE` to overwrite.")
+      cli_alert_danger("Some pre-commit files already exists. Use `force = TRUE` to overwrite.")
     }
     return(invisible())
   }
