@@ -19,7 +19,8 @@ Suggests:
     devtools,
     covr,
     knitr,
-    styler
+    styler,
+    testthat
 VignetteBuilder:
     knitr
 Encoding: UTF-8

@@ -48,10 +48,10 @@ Rprecommit::install_precommit()
 Rprecommit::run_precommit()
 ```
 
-### Add new hooks
+### Add hooks
 
 Editing the `.pre-commit-config` file using
-`Rprecommit::edit_precommit_config()` and add/modify hooks.
+`Rprecommit::edit_precommit_config()`:
 
 ``` bash
 repos:

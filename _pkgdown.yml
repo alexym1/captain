@@ -13,14 +13,12 @@ reference:
   contents:
   - install_precommit
 
-reference:
 - title: Configure
   desc:  Handle .pre-commit-config file.
   contents:
   - create_precommit_config
   - edit_precommit_config
 
-reference:
 - title: Run
   desc:  Run pre-commit hooks.
   contents:
