@@ -7,21 +7,18 @@ repos:
         entry: Rscript inst/pre-commit/hooks/synchronize_project.R
         language: system
         pass_filenames: false
+        always_run: true
       - id: styler
         name: Format package with styler
         description: Styler formats your code according to the tidyverse style guide
         entry: Rscript inst/pre-commit/hooks/format_package_with_styler.R
         language: system
         pass_filenames: false
-      - id: lintr
-        name: Format package with linter
-        description: Linter checks style, syntax errors and possible semantic issues
-        entry: Rscript inst/pre-commit/hooks/format_package_with_linter.R
-        language: system
-        pass_filenames: false
+        always_run: true
       - id: covr
         name: Check coverage
         description: Test coverage for your R package
         entry: Rscript inst/pre-commit/hooks/check_coverage.R
         language: system
         pass_filenames: false
+        always_run: true

@@ -52,6 +52,6 @@ install_deps <- function(path_folder, path_file, overwrite = FALSE) {
   cli_alert_success("{.emph inst/pre-commit} folder has been created.")
 
   file_copy(precommit_file(), path_file, overwrite = overwrite)
-  # file.remove(file.path(root, "inst" ,"pre-commit", "pre-commit"))
+  system(paste("dos2unix", precommit_file()))
   cli_alert_success("{.emph .git/hooks/pre-commit} file has been created.")
 }

@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Rprecommit)](https://cran.r-project.org/package=Rprecommit)
 ![](https://img.shields.io/badge/github%20version-0.1.0-orange.svg)
 [![R-CMD-check](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
@@ -18,7 +19,8 @@ coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/master/graph/badge.svg
 `Rprecommit` is a package that allows you to run pre-commit checks in R.
 This package is inspired by the package
 [lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit).`Rprecommit`
-is designed to run pre-commit without any python dependencies.
+is designed to run pre-commit **WITHOUT ANY PYTHON DEPENDENCIES**. The
+package embeds numerous hooks based on the state-of-the-art R packages.
 
 The package is still under development and new features will be added in
 the future.
@@ -40,22 +42,27 @@ devtools::install_github("alexym1/Rprecommit")
 Rprecommit::install_precommit()
 ```
 
-### Add new hooks
-
-Editing the `.pre-commit-config` file
+### Run hooks
 
 ``` r
-Rprecommit::edit_precommit_config()
-# repos:
-#   - repo: local
-#     hooks:
-#       - id: renv
-#         name: Synchronize project from renv.lock
-#         description: Synchronize the project from the renv.lock
-#         entry: Rscript inst/pre-commit/hooks/synchronize_project.R
-#         language: r
-#         additional_dependencies: [cli]
-#         pass_filenames: false
+Rprecommit::run_precommit()
+```
+
+### Add new hooks
+
+Editing the `.pre-commit-config` file using
+`Rprecommit::edit_precommit_config()` and add/modify hooks.
+
+``` bash
+repos:
+  - repo: local
+    hooks:
+      - id: renv
+        name: Synchronize project from renv.lock
+        description: Synchronize the project from the renv.lock
+        entry: Rscript inst/pre-commit/hooks/synchronize_project.R
+        language: system
+        pass_filenames: false
 ```
 
 ## Code of conduct

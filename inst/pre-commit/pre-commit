@@ -1,3 +1,13 @@
 #!/bin/bash
 
 pre-commit run --config inst/pre-commit/.pre-commit-config.y*ml
+
+STATUS=$?
+
+if [ $STATUS -eq 0 ]; then
+  echo "✅ All hooks passed."
+  exit 0
+else
+  echo "❌ Some hooks failed. Aborting commit."
+  exit 1
+fi
