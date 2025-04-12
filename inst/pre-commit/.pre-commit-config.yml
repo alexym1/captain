@@ -5,27 +5,23 @@ repos:
         name: Synchronize project from renv.lock
         description: Synchronize the project from the renv.lock
         entry: Rscript inst/pre-commit/hooks/synchronize_project.R
-        language: r
-        additional_dependencies: [cli]
+        language: system
         pass_filenames: false
       - id: styler
         name: Format package with styler
         description: Styler formats your code according to the tidyverse style guide
         entry: Rscript inst/pre-commit/hooks/format_package_with_styler.R
-        language: r
-        additional_dependencies: [cli, styler]
+        language: system
         pass_filenames: false
       - id: lintr
         name: Format package with linter
         description: Linter checks style, syntax errors and possible semantic issues
         entry: Rscript inst/pre-commit/hooks/format_package_with_linter.R
-        language: r
-        additional_dependencies: [cli, lintr]
+        language: system
         pass_filenames: false
       - id: covr
         name: Check coverage
         description: Test coverage for your R package
         entry: Rscript inst/pre-commit/hooks/check_coverage.R
-        language: r
-        additional_dependencies: [cli, covr]
+        language: system
         pass_filenames: false
