@@ -10,5 +10,5 @@ install_precommit(force = FALSE)
 \item{force}{overwrite the file if it already exists}
 }
 \description{
-This function installs pre-commit file for the project.
+Install pre-commit file in the repo.
 }

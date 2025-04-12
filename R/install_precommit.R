@@ -1,6 +1,6 @@
 #' Install pre-commit
 #'
-#' This function installs pre-commit file for the project.
+#' Install pre-commit file in the repo.
 #'
 #' @param force overwrite the file if it already exists
 #'

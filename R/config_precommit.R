@@ -6,7 +6,7 @@
 #' @param force overwrite the file if it already exists
 #'
 #' @details
-#' `create_precommit_file()` will create a .pre-commit-config file in the current project.
+#' `create_precommit_config()` will create a .pre-commit-config file in the current project.
 #' Only one file is allowed in the project and should be in the root directory or in the inst directory such as:
 #'
 #' * inst/.pre-commit-config.yml

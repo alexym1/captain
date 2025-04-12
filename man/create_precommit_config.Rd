@@ -18,7 +18,7 @@ edit_precommit_config()
 Handle .pre-commit-config file for running pre-commit hooks
 }
 \details{
-\code{create_precommit_file()} will create a .pre-commit-config file in the current project.
+\code{create_precommit_config()} will create a .pre-commit-config file in the current project.
 Only one file is allowed in the project and should be in the root directory or in the inst directory such as:
 \itemize{
 \item inst/.pre-commit-config.yml
