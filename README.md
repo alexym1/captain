@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Rprecommit
+# Rprecommit <a href=#><img src='man/figures/sticker.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
