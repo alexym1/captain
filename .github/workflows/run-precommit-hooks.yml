@@ -4,11 +4,14 @@ on:
   pull_request:
     branches: [main, master]
 
-run-precommit-hooks:
-  steps:
-    - uses: actions/checkout@v4
-    - name: Run precommit hooks
-      uses: ./.github/actions/run-precommit-hooks
-      with:
-        target: [main, master]
-        source: ${{ github.head_ref }}
+jobs:
+  run-precommit-hooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run precommit hooks
+        uses: ./.github/actions/run-precommit-hooks
+        with:
+          target: "master"
+          source: ${{ github.head_ref }}
