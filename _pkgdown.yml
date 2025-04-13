@@ -7,5 +7,22 @@ authors:
   Alex Martinez:
     href: https://github.com/alexym1
 
+reference:
+- title: Install
+  desc: Install pre-commit in the repo
+  contents:
+  - install_precommit
+
+- title: Configure
+  desc:  Handle .pre-commit-config file.
+  contents:
+  - create_precommit_config
+  - edit_precommit_config
+
+- title: Run
+  desc:  Run pre-commit hooks.
+  contents:
+  - run_precommit
+
 development:
   mode: auto
