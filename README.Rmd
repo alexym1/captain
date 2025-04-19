@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Rprecommit <a href=#><img src="man/figures/sticker.png" align="right" height="150" style="float:right; height:150px;"></a>
+# Rprecommit <a href=#><img src="man/figures/sticker.png" align="right" height="139" style="float:right; height:139px;"></a>
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Rprecommit)](https://cran.r-project.org/package=Rprecommit)
