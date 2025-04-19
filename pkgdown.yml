@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   Rprecommit: Rprecommit.html
-last_built: 2025-04-13T17:05Z
+last_built: 2025-04-19T11:57Z
 urls:
   reference: https://alexym1.github.io/Rprecommit/reference
   article: https://alexym1.github.io/Rprecommit/articles
