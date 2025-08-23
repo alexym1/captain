@@ -2,7 +2,7 @@
 
 ## Added
 
-* Add `create_hook()` function to create custom pre-commit hooks.
+* Add `create_hook()` to create custom pre-commit hooks.
 
 
 # Rprecommit 1.0.0
