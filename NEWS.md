@@ -1,13 +1,9 @@
 # Rprecommit 1.1.0
 
-## Added
-
-* Add `create_hook()` to create custom pre-commit hooks.
+* Add `create_hook()` to create custom pre-commit hooks (#4)
 
 
 # Rprecommit 1.0.0
-
-## Added
 
 * Ability to install, edit and run precommit hooks using `*_precommit()` suite.
 * Add basic pre-commit hooks:
