@@ -1,6 +1,7 @@
 # Rprecommit 1.1.0
 
 * Add `create_hook()` to create custom pre-commit hooks (#4)
+* Refresh README
 
 
 # Rprecommit 1.0.0

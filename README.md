@@ -12,7 +12,7 @@
 coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/master/graph/badge.svg)](https://app.codecov.io/gh/alexym1/Rprecommit?branch=master)
 <!-- badges: end -->
 
-> Running precommit in R
+> Running R pre-commit hooks
 
 ## Overview
 
@@ -22,19 +22,14 @@ like code formatting, linting, or running tests before changes are
 committed.
 
 `Rprecommit` is a package that allows you to run pre-commit checks in R.
-This package is inspired by the package
-[lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit).`Rprecommit`
-is designed to run pre-commit **WITHOUT ANY PYTHON DEPENDENCIES**.
-
-*Some features doesn’t work within the Positron IDE.*
 
 ## Installation
 
 The latest version can be installed from GitHub as follows:
 
 ``` r
-install.packages("devtools")
-devtools::install_github("alexym1/Rprecommit")
+# install.packages("pak")
+pak::pak("alexym1/Rprecommit")
 ```
 
 ## Usage

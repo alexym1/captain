@@ -1,12 +1,12 @@
 Package: Rprecommit
 Type: Package
-Title: Running precommit in R
+Title: Running R pre-commit hooks
 Version: 1.1.0
 Authors@R: c(
     person("Alex", "Yahiaoui Martinez", , "yahiaoui-martinez.alex@outlook.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5315-675X"))
     )
-Description: add a short description of the package.
+Description: Git hook scripts are useful for identifying simple issues before submission to code review. Rprecommit is an R package to manage and run pre-commit hooks.
 License: MIT + file LICENSE
 URL: https://github.com/alexym1/Rprecommit, https://alexym1.github.io/Rprecommit/
 BugReports: https://github.com/alexym1/Rprecommit/issues
