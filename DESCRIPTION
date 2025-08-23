@@ -14,7 +14,8 @@ Depends:
     R (>= 4.1.0)
 Imports:
     cli,
-    fs
+    fs,
+    yaml
 Suggests: 
     devtools,
     covr,
