@@ -26,8 +26,7 @@ This package is inspired by the package
 [lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit).`Rprecommit`
 is designed to run pre-commit **WITHOUT ANY PYTHON DEPENDENCIES**.
 
-The package is still under development and new features will be added in
-the future.
+*Some features doesn’t work within the Positron IDE.*
 
 ## Installation
 
