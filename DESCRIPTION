@@ -21,7 +21,8 @@ Suggests:
     covr,
     knitr,
     styler,
-    testthat
+    testthat,
+    withr
 VignetteBuilder:
     knitr
 Encoding: UTF-8
