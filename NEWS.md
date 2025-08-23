@@ -1,10 +1,13 @@
-# Rprecommit 0.1.1
+# Rprecommit 1.1.0
 
-* Upgrade the quality of the `sticker.png`
-* Update description of the `README.md`
+## Added
+
+* Add `create_hook()` function to create custom pre-commit hooks.
 
 
-# Rprecommit 0.1.0
+# Rprecommit 1.0.0
+
+## Added
 
 * Ability to install, edit and run precommit hooks using `*_precommit()` suite.
 * Add basic pre-commit hooks:
