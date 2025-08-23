@@ -27,11 +27,6 @@ create_hook <- function(id, name, description, language = "system", always_run =
     return(invisible())
   }
 
-  # Create the hook script
-  create_hook_script(name = name)
-  cli_alert_success("{.emph inst/pre-commit/hooks/{name}.R} has been successfully created.")
-
-
   # Update the config file
   config_file <- files[found_files]
   config <- yaml.load_file(config_file)
@@ -46,6 +41,17 @@ create_hook <- function(id, name, description, language = "system", always_run =
     always_run = always_run
   )
 
+  # Create the hook script
+  lst_id <- vapply(config$repos[[1]]$hooks, `[[`, character(1), "id")
+  if (id %in% lst_id) {
+    cli_alert_danger("A hook with id {.emph {id}} already exists. Choose a different id.")
+    return(invisible())
+  } else {
+    create_hook_script(name = name)
+    cli_alert_success("{.emph inst/pre-commit/hooks/{name}.R} has been successfully created.")
+  }
+
+  # Update the config file
   config$repos[[1]]$hooks <- append(config$repos[[1]]$hooks, list(new_hook))
   write_yaml(config, config_file, handlers = list(logical = verbatim_logical), indent = 4)
   cli_alert_success("{.emph {config_file}} has been successfully updated. Edit with `edit_precommit_config()`")
