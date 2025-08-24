@@ -12,3 +12,5 @@
 ^codecov\.yml$
 ^inst/pre-commit/.pre-commit-config.yml$
 ^inst/pre-commit/.pre-commit-config.yaml$
+^.vscode$
+^.vscode\.json$

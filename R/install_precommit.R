@@ -3,12 +3,13 @@
 #' Install pre-commit file in the repo.
 #'
 #' @param force overwrite the file if it already exists
+#' @param ... additional arguments to pass to `create_precommit_config()`
 #'
 #' @importFrom fs file_copy dir_copy
 #' @importFrom cli cli_alert_success cli_div cli_h1 cli_alert_danger
 #'
 #' @export
-install_precommit <- function(force = FALSE) {
+install_precommit <- function(force = FALSE, ...) {
   cli_h1("Install pre-commit")
 
   tryCatch(
@@ -35,7 +36,7 @@ install_precommit <- function(force = FALSE) {
     return(invisible())
   }
 
-  install_deps(path_folder, path_file, overwrite = force)
+  install_deps(path_folder, path_file, overwrite = force, ...)
 }
 
 
@@ -47,11 +48,13 @@ precommit_file <- function() {
   system.file("pre-commit/pre-commit", package = "Rprecommit")
 }
 
-install_deps <- function(path_folder, path_file, overwrite = FALSE) {
+install_deps <- function(path_folder, path_file, overwrite = FALSE, ...) {
   dir_copy(precommit_folder(), path_folder, overwrite = overwrite)
   cli_alert_success("{.emph inst/pre-commit} folder has been created.")
 
   file_copy(precommit_file(), path_file, overwrite = overwrite)
   system(paste("dos2unix", precommit_file()))
   cli_alert_success("{.emph .git/hooks/pre-commit} file has been created.")
+
+  create_precommit_config(force = overwrite, ...)
 }

@@ -6,13 +6,13 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Rprecommit)](https://cran.r-project.org/package=Rprecommit)
-![](https://img.shields.io/badge/github%20version-0.1.1-orange.svg)
+![](https://img.shields.io/badge/github%20version-1.1.0-orange.svg)
 [![R-CMD-check](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/master/graph/badge.svg)](https://app.codecov.io/gh/alexym1/Rprecommit?branch=master)
 <!-- badges: end -->
 
-> Running precommit in R
+> Running R pre-commit hooks
 
 ## Overview
 
@@ -22,20 +22,14 @@ like code formatting, linting, or running tests before changes are
 committed.
 
 `Rprecommit` is a package that allows you to run pre-commit checks in R.
-This package is inspired by the package
-[lorenzwalthert/precommit](https://github.com/lorenzwalthert/precommit).`Rprecommit`
-is designed to run pre-commit **WITHOUT ANY PYTHON DEPENDENCIES**.
-
-The package is still under development and new features will be added in
-the future.
 
 ## Installation
 
 The latest version can be installed from GitHub as follows:
 
 ``` r
-install.packages("devtools")
-devtools::install_github("alexym1/Rprecommit")
+# install.packages("pak")
+pak::pak("alexym1/Rprecommit")
 ```
 
 ## Usage

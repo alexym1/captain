@@ -16,6 +16,7 @@ reference:
 - title: Configure
   desc:  Handle .pre-commit-config file.
   contents:
+  - create_hook
   - create_precommit_config
   - edit_precommit_config
 

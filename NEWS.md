@@ -1,10 +1,11 @@
-# Rprecommit 0.1.1
+# Rprecommit 1.1.0
 
-* Upgrade the quality of the `sticker.png`
-* Update description of the `README.md`
+* Add `create_hook()` to create custom pre-commit hooks (#4)
+* Fix `create_precommit_config()` to return `.pre-commit-config.yml` as expected
+* Refresh README
 
 
-# Rprecommit 0.1.0
+# Rprecommit 1.0.0
 
 * Ability to install, edit and run precommit hooks using `*_precommit()` suite.
 * Add basic pre-commit hooks:
