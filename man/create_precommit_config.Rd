@@ -5,7 +5,7 @@
 \alias{edit_precommit_config}
 \title{Handle .pre-commit-config file}
 \usage{
-create_precommit_config(filename = path_precommit_files(), force = FALSE)
+create_precommit_config(filename = path_precommit_files()[1], force = FALSE)
 
 edit_precommit_config()
 }

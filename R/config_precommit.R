@@ -17,7 +17,7 @@
 #' @importFrom utils file.edit
 #'
 #' @export
-create_precommit_config <- function(filename = path_precommit_files(), force = FALSE) {
+create_precommit_config <- function(filename = path_precommit_files()[1], force = FALSE) {
   filename <- match.arg(filename)
   path <- path_abs(filename)
 
@@ -64,7 +64,7 @@ edit_precommit_config <- function() {
   file.edit(paths[index])
 }
 
-
+#' @export
 template_precommit_file <- function() {
   lst <- lapply(path_precommit_files(), function(file) {
     tryCatch(
@@ -81,7 +81,7 @@ template_precommit_file <- function() {
   return(template_path)
 }
 
-
+#' @export
 path_precommit_files <- function() {
   c(
     "inst/pre-commit/.pre-commit-config.yml",
