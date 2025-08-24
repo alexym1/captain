@@ -39,7 +39,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
     dir.create("inst")
     cli_alert_success("{.emph inst} folder has been created.")
   }
-  
+
   file_copy(template_precommit_file(), filename, overwrite = FALSE)
   config_file <- read_yaml(filename)
   write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
@@ -73,42 +73,42 @@ edit_precommit_config <- function() {
 
 template_precommit_file <- function() {
   config <- list(
-  repos = list(
-    list(
-      repo = "local",
-      hooks = list(
-        list(
-          id = "renv",
-          name = "Synchronize project from renv.lock",
-          description = "Synchronize the project from the renv.lock",
-          entry = "Rscript inst/pre-commit/hooks/synchronize_project.R",
-          language = "system",
-          pass_filenames = FALSE,
-          always_run = TRUE
-        ),
-        list(
-          id = "styler",
-          name = "Format package with styler",
-          description = "Styler formats your code according to the tidyverse style guide",
-          entry = "Rscript inst/pre-commit/hooks/format_package_with_styler.R",
-          language = "system",
-          pass_filenames = FALSE,
-          always_run = TRUE
-        ),
-        list(
-          id = "covr",
-          name = "Check coverage",
-          description = "Test coverage for your R package",
-          entry = "Rscript inst/pre-commit/hooks/check_coverage.R",
-          language = "system",
-          pass_filenames = FALSE,
-          always_run = TRUE
+    repos = list(
+      list(
+        repo = "local",
+        hooks = list(
+          list(
+            id = "renv",
+            name = "Synchronize project from renv.lock",
+            description = "Synchronize the project from the renv.lock",
+            entry = "Rscript inst/pre-commit/hooks/synchronize_project.R",
+            language = "system",
+            pass_filenames = FALSE,
+            always_run = TRUE
+          ),
+          list(
+            id = "styler",
+            name = "Format package with styler",
+            description = "Styler formats your code according to the tidyverse style guide",
+            entry = "Rscript inst/pre-commit/hooks/format_package_with_styler.R",
+            language = "system",
+            pass_filenames = FALSE,
+            always_run = TRUE
+          ),
+          list(
+            id = "covr",
+            name = "Check coverage",
+            description = "Test coverage for your R package",
+            entry = "Rscript inst/pre-commit/hooks/check_coverage.R",
+            language = "system",
+            pass_filenames = FALSE,
+            always_run = TRUE
+          )
         )
       )
     )
   )
-)
-  
+
   yaml_file <- as.yaml(config, indent.mapping.sequence = TRUE)
   tmp_file <- tempfile(fileext = ".yml")
   write_yaml(config, tmp_file)
