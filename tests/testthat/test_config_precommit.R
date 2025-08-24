@@ -1,7 +1,7 @@
 library(Rprecommit)
 
 test_that("Testing template_precommit_file()", {
-  expect_equal(length(template_precommit_file()), 0)
+  expect_equal(length(template_precommit_file()), 1)
 })
 
 test_that("Testing path_precommit_files()", {
