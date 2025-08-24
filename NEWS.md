@@ -1,6 +1,7 @@
 # Rprecommit 1.1.0
 
 * Add `create_hook()` to create custom pre-commit hooks (#4)
+* Fix `create_precommit_config()` to return `.pre-commit-config.yml` as expected
 * Refresh README
 
 

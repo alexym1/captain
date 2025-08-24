@@ -23,7 +23,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
 
   if (file_exists(path)) {
     if (force) {
-      file_copy(template_precommit_file(filename), filename, overwrite = TRUE)
+      file_copy(template_precommit_file(), filename, overwrite = TRUE)
       cli_alert_success("{filename} has been created.")
     } else {
       cli_alert_danger("{filename} already exists. Use `force = TRUE` to overwrite.")
