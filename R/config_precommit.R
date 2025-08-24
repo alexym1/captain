@@ -18,12 +18,11 @@
 #'
 #' @export
 create_precommit_config <- function(filename = path_precommit_files()[1], force = FALSE) {
-  filename <- match.arg(filename)
   path <- path_abs(filename)
 
   if (file_exists(path)) {
     if (force) {
-      file_copy(template_precommit_file(), filename, overwrite = TRUE)
+      file_copy(template_precommit_file(filename), filename, overwrite = TRUE)
       cli_alert_success("{filename} has been created.")
     } else {
       cli_alert_danger("{filename} already exists. Use `force = TRUE` to overwrite.")
@@ -36,7 +35,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
     cli_alert_success("inst folder has been created.")
   }
 
-  file_copy(template_precommit_file(), filename, overwrite = FALSE)
+  file_copy(template_precommit_file(filename), filename, overwrite = FALSE)
   cli_alert_success("{filename} has been created.")
 }
 
@@ -64,8 +63,7 @@ edit_precommit_config <- function() {
   file.edit(paths[index])
 }
 
-#' @export
-template_precommit_file <- function() {
+template_precommit_file <- function(path = path_precommit_files()[1]) {
   lst <- lapply(path_precommit_files(), function(file) {
     tryCatch(
       {
@@ -81,7 +79,6 @@ template_precommit_file <- function() {
   return(template_path)
 }
 
-#' @export
 path_precommit_files <- function() {
   c(
     "inst/pre-commit/.pre-commit-config.yml",
