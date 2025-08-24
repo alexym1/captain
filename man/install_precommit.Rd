@@ -4,10 +4,12 @@
 \alias{install_precommit}
 \title{Install pre-commit}
 \usage{
-install_precommit(force = FALSE)
+install_precommit(force = FALSE, ...)
 }
 \arguments{
 \item{force}{overwrite the file if it already exists}
+
+\item{...}{additional arguments to pass to \code{create_precommit_config()}}
 }
 \description{
 Install pre-commit file in the repo.
