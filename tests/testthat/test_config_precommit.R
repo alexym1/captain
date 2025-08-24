@@ -3,7 +3,7 @@ library(withr)
 
 test_that("Testing run_precommit() successfully failed!", {
   res_cli <- run_precommit()
-  expect_match(res_cli, "^cli-[0-9]{4}-[0-9]{1-3}$")
+  expect_match(res_cli, "^cli-[0-9]{1,4}-[0-9]{1,3}$")
 })
 
 test_that("Testing template_precommit_file()", {
