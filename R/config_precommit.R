@@ -63,11 +63,12 @@ edit_precommit_config <- function() {
   file.edit(paths[index])
 }
 
-template_precommit_file <- function(path = path_precommit_files()[1]) {
+template_precommit_file <- function(path) {
   lst <- lapply(path_precommit_files(), function(file) {
     tryCatch(
       {
-        system.file(file, package = "Rprecommit")
+        sub_file <- sub("inst/", "", file)
+        system.file(sub_file, package = "Rprecommit")
       },
       error = function(e) ""
     )
