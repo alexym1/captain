@@ -9,12 +9,13 @@
 #' `create_precommit_config()` will create a .pre-commit-config file in the current project.
 #' Only one file is allowed in the project and should be in the root directory or in the inst directory such as:
 #'
-#' * inst/.pre-commit-config.yml
-#' * inst/.pre-commit-config.yaml
+#' * inst/pre-commit/.pre-commit-config.yml
+#' * inst/pre-commit/.pre-commit-config.yaml
 #'
 #' @importFrom fs path_abs file_exists dir_ls file_copy
 #' @importFrom cli cli_alert_success cli_alert_danger cli_alert_info cli_div
 #' @importFrom utils file.edit
+#' @importFrom yaml as.yaml write_yaml read_yaml
 #'
 #' @export
 create_precommit_config <- function(filename = path_precommit_files()[1], force = FALSE) {
@@ -34,8 +35,11 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
     dir.create("inst")
     cli_alert_success("inst folder has been created.")
   }
+  
 
-  file_copy(template_precommit_file(filename), filename, overwrite = FALSE)
+  file_copy(template_precommit_file(), filename, overwrite = FALSE)
+  config_file <- read_yaml(filename)
+  write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
   cli_alert_success("{filename} has been created.")
 }
 
@@ -63,21 +67,49 @@ edit_precommit_config <- function() {
   file.edit(paths[index])
 }
 
-template_precommit_file <- function(path) {
-  lst <- lapply(path_precommit_files(), function(file) {
-    tryCatch(
-      {
-        sub_file <- sub("inst/", "", file)
-        system.file(sub_file, package = "Rprecommit")
-      },
-      error = function(e) ""
+template_precommit_file <- function() {
+  config <- list(
+  repos = list(
+    list(
+      repo = "local",
+      hooks = list(
+        list(
+          id = "renv",
+          name = "Synchronize project from renv.lock",
+          description = "Synchronize the project from the renv.lock",
+          entry = "Rscript inst/pre-commit/hooks/synchronize_project.R",
+          language = "system",
+          pass_filenames = FALSE,
+          always_run = TRUE
+        ),
+        list(
+          id = "styler",
+          name = "Format package with styler",
+          description = "Styler formats your code according to the tidyverse style guide",
+          entry = "Rscript inst/pre-commit/hooks/format_package_with_styler.R",
+          language = "system",
+          pass_filenames = FALSE,
+          always_run = TRUE
+        ),
+        list(
+          id = "covr",
+          name = "Check coverage",
+          description = "Test coverage for your R package",
+          entry = "Rscript inst/pre-commit/hooks/check_coverage.R",
+          language = "system",
+          pass_filenames = FALSE,
+          always_run = TRUE
+        )
+      )
     )
-  })
+  )
+)
+  
+  yaml_file <- as.yaml(config, indent.mapping.sequence = TRUE)
+  tmp_file <- tempfile(fileext = ".yml")
+  write_yaml(config, tmp_file)
 
-  files <- unlist(lst)
-  template_path <- files[!(files %in% "")]
-
-  return(template_path)
+  return(tmp_file)
 }
 
 path_precommit_files <- function() {
