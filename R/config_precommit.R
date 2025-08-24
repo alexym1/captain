@@ -21,26 +21,30 @@
 create_precommit_config <- function(filename = path_precommit_files()[1], force = FALSE) {
   path <- path_abs(filename)
 
+  cli_div(theme = list(span.emph = list(color = "orange")))
+
   if (file_exists(path)) {
     if (force) {
       file_copy(template_precommit_file(), filename, overwrite = TRUE)
-      cli_alert_success("{filename} has been created.")
+      config_file <- read_yaml(filename)
+      write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
+      cli_alert_success("{.emph filename} has been created.")
     } else {
-      cli_alert_danger("{filename} already exists. Use `force = TRUE` to overwrite.")
+      cli_alert_danger("{.emph filename} already exists. Use `force = TRUE` to overwrite.")
     }
     return(invisible())
   }
 
   if (!any(grepl("inst", dir_ls()))) {
     dir.create("inst")
-    cli_alert_success("inst folder has been created.")
+    cli_alert_success("{.emph inst} folder has been created.")
   }
   
-
   file_copy(template_precommit_file(), filename, overwrite = FALSE)
   config_file <- read_yaml(filename)
   write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
-  cli_alert_success("{filename} has been created.")
+
+  cli_alert_success("{.emph filename} has been created.")
 }
 
 
