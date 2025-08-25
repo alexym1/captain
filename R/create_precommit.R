@@ -1,6 +1,6 @@
-#' Create a pre-commit hook
+#' Create pre-commit hooks
 #'
-#' Add a pre-commit hook to .pre-commit-config.y*ml
+#' Add pre-commit hooks to .pre-commit-config.y*ml file
 #'
 #' @param id The unique identifier for the hook.
 #' @param name A descriptive name for the hook.
@@ -13,14 +13,14 @@
 #' @importFrom cli cli_alert_danger cli_alert_success cli_div
 #'
 #' @export
-create_hook <- function(id, name, description, language = "system", always_run = TRUE) {
+create_precommit_hook <- function(id, name, description, language = "system", always_run = TRUE) {
   files <- path_precommit_files()
   found_files <- unlist(lapply(files, file_exists))
 
   cli_div(theme = list(span.emph = list(color = "orange")))
 
   if (all(found_files)) {
-    cli_alert_danger("Multiple pre-commit files are found. Keep one file and re-run `create_hook(...)`.")
+    cli_alert_danger("Multiple pre-commit files are found. Keep one file and re-run `create_precommit_hook(...)`.")
     return(invisible())
   } else if (all(!found_files)) {
     cli_alert_danger("{.emph pre-commit} doesn't exist. Run `install_precommit()`.")

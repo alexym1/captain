@@ -9,6 +9,6 @@ test_that("Testing create_hook_script()", {
   })
 })
 
-test_that("Testing create_hook()", {
-  create_hook(id = "test_hook", name = "tmp_hook", description = "A temporary hook")
+test_that("Testing create_precommit_hook()", {
+  create_precommit_hook(id = "test_hook", name = "tmp_hook", description = "A temporary hook")
 })
