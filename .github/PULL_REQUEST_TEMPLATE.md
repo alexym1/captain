@@ -1,6 +1,6 @@
 # Changelog
 
-Please include a summary of the change ([NEWS.md](https://github.com/alexym1/FactoMineR2/blob/master/NEWS.md)).
+Please include a summary of the change ([NEWS.md](https://github.com/alexym1/Rprecommit/blob/master/NEWS.md)).
 
 # Checklist:
 
@@ -11,3 +11,4 @@ Please include a summary of the change ([NEWS.md](https://github.com/alexym1/Fac
 - [ ] Run `devtools::check()` with no errors, warnings or notes
 - [ ] Run `pkgdown::build_site()` for building website
 - [ ] (optional) New code should follow the tidyverse with `styler`
+
