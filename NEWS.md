@@ -1,6 +1,6 @@
 # Rprecommit 1.1.0
 
-* Add `create_hook()` to create custom pre-commit hooks (#4)
+* Add `create_precommit_hook()` to create custom pre-commit hooks (#4)
 * Fix `create_precommit_config()` to return `.pre-commit-config.yml` as expected
 * Refresh README
 
@@ -13,3 +13,4 @@
     - `synchronize_project.R`
     - `format_package_with_styler.R`
     - `check_coverage.R`
+
