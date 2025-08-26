@@ -16,8 +16,8 @@ reference:
 - title: Configure
   desc:  Handle .pre-commit-config file.
   contents:
-  - create_hook
   - create_precommit_config
+  - create_precommit_hook
   - edit_precommit_config
 
 - title: Run
@@ -27,3 +27,4 @@ reference:
 
 development:
   mode: auto
+

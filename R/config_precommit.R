@@ -28,9 +28,9 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
       file_copy(template_precommit_file(), filename, overwrite = TRUE)
       config_file <- read_yaml(filename)
       write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
-      cli_alert_success("{.emph filename} has been created.")
+      cli_alert_success("{.emph {filename}} has been created.")
     } else {
-      cli_alert_danger("{.emph filename} already exists. Use `force = TRUE` to overwrite.")
+      cli_alert_danger("{.emph {filename}} already exists. Use `force = TRUE` to overwrite.")
     }
     return(invisible())
   }
@@ -44,7 +44,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
   config_file <- read_yaml(filename)
   write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
 
-  cli_alert_success("{.emph filename} has been created.")
+  cli_alert_success("{.emph {filename}} has been created.")
 }
 
 
