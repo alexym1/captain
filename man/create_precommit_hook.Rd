@@ -5,6 +5,7 @@
 \title{Create pre-commit hooks}
 \usage{
 create_precommit_hook(
+  filename,
   id,
   name,
   description,
@@ -13,15 +14,17 @@ create_precommit_hook(
 )
 }
 \arguments{
-\item{id}{The unique identifier for the hook.}
+\item{filename}{The name of script file}
 
-\item{name}{A descriptive name for the hook.}
+\item{id}{The unique identifier for the hook}
 
-\item{description}{A brief description of what the hook does.}
+\item{name}{A descriptive name for the hook}
 
-\item{language}{The programming language or environment for the hook (default is "system").}
+\item{description}{A brief description of what the hook does}
 
-\item{always_run}{Logical, whether the hook should always run (default is TRUE).}
+\item{language}{The programming language or environment for the hook (default is "system")}
+
+\item{always_run}{Logical, whether the hook should always run (default is TRUE)}
 }
 \description{
 Add pre-commit hooks to .pre-commit-config.y*ml file
