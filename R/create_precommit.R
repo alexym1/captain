@@ -3,7 +3,7 @@
 #' Add pre-commit hooks to .pre-commit-config.y*ml file
 #'
 #' @param id The unique identifier for the hook.
-#' @param name A descriptive name for the hook.
+#' @param name A descriptive name for the hook and the script file.
 #' @param description A brief description of what the hook does.
 #' @param language The programming language or environment for the hook (default is "system").
 #' @param always_run Logical, whether the hook should always run (default is TRUE).
@@ -20,10 +20,10 @@ create_precommit_hook <- function(id, name, description, language = "system", al
   cli_div(theme = list(span.emph = list(color = "orange")))
 
   if (all(found_files)) {
-    cli_alert_danger("Multiple pre-commit files are found. Keep one file and re-run `create_precommit_hook(...)`.")
+    cli_alert_danger("Multiple pre-commit files are found. Keep one file and re-run `create_precommit_hook()`.")
     return(invisible())
   } else if (all(!found_files)) {
-    cli_alert_danger("{.emph pre-commit} doesn't exist. Run `install_precommit()`.")
+    cli_alert_danger("{.emph {inst/pre-commit/.pre-commit-config.y*ml}} doesn't exist. Run `install_precommit()`.")
     return(invisible())
   }
 
@@ -44,7 +44,7 @@ create_precommit_hook <- function(id, name, description, language = "system", al
   # Create the hook script
   lst_id <- vapply(config$repos[[1]]$hooks, `[[`, character(1), "id")
   if (id %in% lst_id) {
-    cli_alert_danger("A hook with id {.emph id} already exists. Choose a different id.")
+    cli_alert_danger("A hook with id {.emph {id}} already exists. Choose a different id.")
     return(invisible())
   } else {
     create_hook_script(name = name)
@@ -54,7 +54,7 @@ create_precommit_hook <- function(id, name, description, language = "system", al
   # Update the config file
   config$repos[[1]]$hooks <- append(config$repos[[1]]$hooks, list(new_hook))
   write_yaml(config, config_file, handlers = list(logical = verbatim_logical), indent = 4)
-  cli_alert_success("{.emph config_file} has been successfully updated. Edit with `edit_precommit_config()`")
+  cli_alert_success("{.emph {config_file}} has been successfully updated. Edit with `edit_precommit_config()`")
 }
 
 
