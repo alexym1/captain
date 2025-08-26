@@ -49,7 +49,7 @@ create_precommit_hook <- function(filename, id, name, description, language = "s
     return(invisible())
   } else {
     create_hook_script(name = filename)
-    cli_alert_success("{.emph inst/pre-commit/hooks/{filename}.R} has been successfully created.")
+    cli_alert_success("{.emph inst/pre-commit/hooks/{filename}.R} has been successfully created. Edit the file to add your hook logic.")
   }
 
   # Update the config file
