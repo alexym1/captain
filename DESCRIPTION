@@ -1,7 +1,7 @@
 Package: Rprecommit
 Type: Package
 Title: Running R pre-commit hooks
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: c(
     person("Alex", "Yahiaoui Martinez", , "yahiaoui-martinez.alex@outlook.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5315-675X"))

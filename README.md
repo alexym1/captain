@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/Rprecommit)](https://cran.r-project.org/package=Rprecommit)
-![](https://img.shields.io/badge/github%20version-1.1.0-orange.svg)
+![](https://img.shields.io/badge/github%20version-1.1.1-orange.svg)
 [![R-CMD-check](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/Rprecommit/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/alexym1/Rprecommit/branch/master/graph/badge.svg)](https://app.codecov.io/gh/alexym1/Rprecommit?branch=master)

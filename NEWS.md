@@ -1,3 +1,8 @@
+# Rprecommit 1.1.1
+
+* Add new logo (#10)
+
+
 # Rprecommit 1.1.0
 
 * Add `create_precommit_hook()` to create custom pre-commit hooks (#4)
