@@ -68,3 +68,8 @@ repos:
 Please note that this project is released with a [Contributor Code of
 Conduct](https://alexym1.github.io/Rprecommit/CONTRIBUTING.html). By
 participating in this project you agree to abide by its terms.
+
+## Acknowledgments
+
+This logo was created by
+[@obstacle.graphic](https://linktr.ee/obstacle.graphic).
