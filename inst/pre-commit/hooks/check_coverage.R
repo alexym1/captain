@@ -4,9 +4,9 @@ cli::cli_h1("Check coverage during test execution")
 cli::cli_div(theme = list(span.emph = list(color = "orange")))
 
 tryCatch({
-  detach("package:Rprecommit", unload = TRUE)
+  detach("package:captain", unload = TRUE)
 }, error = function(e){
-  cli::cli_alert_info("The {.emph Rprecommit} is already detached.")
+  cli::cli_alert_info("The {.emph captain} is already detached.")
 })
 
 cov <- covr::package_coverage()

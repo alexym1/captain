@@ -1,4 +1,4 @@
-library(Rprecommit)
+library(captain)
 
 test_that("Testing install_precommit()", {
   res_cli <- tryCatch(

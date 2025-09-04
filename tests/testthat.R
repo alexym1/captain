@@ -1,4 +1,4 @@
-library(Rprecommit)
+library(captain)
 library(testthat)
 
-test_check("Rprecommit")
+test_check("captain")

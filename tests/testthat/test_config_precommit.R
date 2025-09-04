@@ -1,4 +1,4 @@
-library(Rprecommit)
+library(captain)
 library(withr)
 
 test_that("Testing run_precommit() successfully failed!", {

@@ -83,7 +83,7 @@ create_hook_script <- function(name) {
     "# If failed return status 1",
     "# quit(save = \"no\", status = 1, runLast = FALSE)",
     "",
-    "# Get more inspiration at https://github.com/alexym1/Rprecommit/tree/master/inst/pre-commit/hooks"
+    "# Get more inspiration at https://github.com/alexym1/captain/tree/master/inst/pre-commit/hooks"
   )
   return(template)
 }

@@ -41,11 +41,11 @@ install_precommit <- function(force = FALSE, ...) {
 
 
 precommit_folder <- function() {
-  system.file("pre-commit", package = "Rprecommit")
+  system.file("pre-commit", package = "captain")
 }
 
 precommit_file <- function() {
-  system.file("pre-commit/pre-commit", package = "Rprecommit")
+  system.file("pre-commit/pre-commit", package = "captain")
 }
 
 install_deps <- function(path_folder, path_file, overwrite = FALSE, ...) {
