@@ -9,6 +9,9 @@ run_precommit(path = ".git/hooks/pre-commit")
 \arguments{
 \item{path}{path of the pre-commit file}
 }
+\value{
+cli message related to the run of all git precommit hooks.
+}
 \description{
 Run pre-commit hooks
 }

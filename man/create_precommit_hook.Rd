@@ -26,6 +26,9 @@ create_precommit_hook(
 
 \item{always_run}{Logical, whether the hook should always run (default is TRUE)}
 }
+\value{
+cli messages related to the creation of the hook and updating the config file. Create \verb{inst/pre-commit/hooks/\{filename\}.R} script and update \code{.pre-commit-config.y*ml} file.
+}
 \description{
 Add pre-commit hooks to .pre-commit-config.y*ml file
 }

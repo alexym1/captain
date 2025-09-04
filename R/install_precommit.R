@@ -4,9 +4,12 @@
 #'
 #' @param force overwrite the file if it already exists
 #' @param ... additional arguments to pass to `create_precommit_config()`
+
+#' @returns cli messages related to the installation of pre-commit files. Create `inst/pre-commit` folder and `.git/hooks/pre-commit` file.
 #'
 #' @importFrom fs file_copy dir_copy
 #' @importFrom cli cli_alert_success cli_div cli_h1 cli_alert_danger
+#' 
 #'
 #' @export
 install_precommit <- function(force = FALSE, ...) {

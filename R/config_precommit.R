@@ -4,6 +4,8 @@
 #'
 #' @param filename the name of the file to create
 #' @param force overwrite the file if it already exists
+#' 
+#' @returns cli messages related to the creation and edition of the `.pre-commit-config` file.
 #'
 #' @details
 #' `create_precommit_config()` will create a .pre-commit-config file in the current project.
