@@ -6,6 +6,7 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/captain)](https://cran.r-project.org/package=captain)
+[![](https://cranlogs.r-pkg.org/badges/captain)](https://cran.r-project.org/package=captain)
 ![](https://img.shields.io/badge/github%20version-1.1.1-orange.svg)
 [![R-CMD-check](https://github.com/alexym1/captain/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/captain/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
@@ -21,7 +22,8 @@ finalized in Git. They’re used to catch issues early by enforcing checks
 like code formatting, linting, or running tests before changes are
 committed.
 
-`captain` is a package that allows you to run pre-commit checks in R.
+`captain` (hook) is a package that allows you to run git pre-commit
+hooks in a R environment.
 
 ## Installation
 

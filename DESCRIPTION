@@ -6,7 +6,7 @@ Authors@R: c(
     person("Alex", "Yahiaoui Martinez", , "yahiaoui-martinez.alex@outlook.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5315-675X"))
     )
-Description: Git hook scripts are useful for identifying simple issues before submission to code review. captain is an R package to manage and run git pre-commit hooks.
+Description: Git hook scripts are useful for identifying simple issues before submission to code review. captain (hook) is an R package to manage and run git pre-commit hooks.
 License: MIT + file LICENSE
 URL: https://github.com/alexym1/captain, https://alexym1.github.io/captain/
 BugReports: https://github.com/alexym1/captain/issues
