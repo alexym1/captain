@@ -1,6 +1,7 @@
 # captain 1.1.1
 
 * Change name of the package from `Rprecommit` to `captain`
+* Preparation for CRAN submission
 * Add new logo (#10)
 
 
