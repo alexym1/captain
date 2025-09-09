@@ -14,3 +14,4 @@
 ^inst/pre-commit/.pre-commit-config.yaml$
 ^.vscode$
 ^.vscode\.json$
+^cran-comments\.md$
