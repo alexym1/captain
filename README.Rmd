@@ -36,6 +36,12 @@ Pre-commit hooks are scripts that run automatically before a commit is finalized
 
 ## Installation
 
+The `captain` package can be installed from CRAN as follows:
+
+```{r eval = FALSE}
+install.packages("captain")
+```
+
 The latest version can be installed from GitHub as follows: 
 
 ```{r eval = FALSE}

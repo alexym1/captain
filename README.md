@@ -27,6 +27,12 @@ hooks in a R environment.
 
 ## Installation
 
+The `captain` package can be installed from CRAN as follows:
+
+``` r
+install.packages("captain")
+```
+
 The latest version can be installed from GitHub as follows:
 
 ``` r
