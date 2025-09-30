@@ -70,8 +70,11 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>The latest version can be installed from GitHub as follows:</p>
+<p>The <code>captain</code> package can be installed from CRAN as follows:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"captain"</span><span class="op">)</span></span></code></pre></div>
+<p>The latest version can be installed from GitHub as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"alexym1/captain"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -81,28 +84,28 @@
 <div class="section level3">
 <h3 id="initialize-pre-commit-framework">Initialize pre-commit framework<a class="anchor" aria-label="anchor" href="#initialize-pre-commit-framework"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">captain</span><span class="fu">::</span><span class="fu"><a href="reference/install_precommit.html">install_precommit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="run-hooks">Run hooks<a class="anchor" aria-label="anchor" href="#run-hooks"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">captain</span><span class="fu">::</span><span class="fu"><a href="reference/run_precommit.html">run_precommit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="add-hooks">Add hooks<a class="anchor" aria-label="anchor" href="#add-hooks"></a>
 </h3>
 <p>Editing the <code>.pre-commit-config</code> file using <code><a href="reference/create_precommit_config.html">captain::edit_precommit_config()</a></code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">repos:</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="ex">-</span> repo: local</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="ex">hooks:</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>      <span class="ex">-</span> id: renv</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>        <span class="ex">name:</span> Synchronize project from renv.lock</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>        <span class="ex">description:</span> Synchronize the project from the renv.lock</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>        <span class="ex">entry:</span> Rscript inst/pre-commit/hooks/synchronize_project.R</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>        <span class="ex">language:</span> system</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>        <span class="ex">pass_filenames:</span> false</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">repos:</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="ex">-</span> repo: local</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="ex">hooks:</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>      <span class="ex">-</span> id: renv</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>        <span class="ex">name:</span> Synchronize project from renv.lock</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>        <span class="ex">description:</span> Synchronize the project from the renv.lock</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>        <span class="ex">entry:</span> Rscript inst/pre-commit/hooks/synchronize_project.R</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>        <span class="ex">language:</span> system</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        <span class="ex">pass_filenames:</span> false</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
