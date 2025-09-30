@@ -1,6 +1,6 @@
 # Changelog
 
-Please include a summary of the change ([NEWS.md](https://github.com/alexym1/Rprecommit/blob/master/NEWS.md)).
+Please include a summary of the change ([NEWS.md](https://github.com/alexym1/captain/blob/master/NEWS.md)).
 
 # Checklist:
 

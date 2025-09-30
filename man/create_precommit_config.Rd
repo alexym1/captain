@@ -14,6 +14,9 @@ edit_precommit_config()
 
 \item{force}{overwrite the file if it already exists}
 }
+\value{
+cli messages related to the creation and edition of the \code{.pre-commit-config} file.
+}
 \description{
 Handle .pre-commit-config file for running pre-commit hooks
 }

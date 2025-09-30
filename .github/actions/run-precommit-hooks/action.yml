@@ -15,5 +15,5 @@ runs:
       run: |
         Rscript -e 'install.packages("devtools")'
         Rscript -e 'devtools::install()'
-        Rscript -e 'Rprecommit::install_precommit(force=TRUE)'
-        Rscript -e 'Rprecommit::run_precommit()'
+        Rscript -e 'captain::install_precommit(force=TRUE)'
+        Rscript -e 'captain::run_precommit()'

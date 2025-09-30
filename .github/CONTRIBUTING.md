@@ -1,6 +1,6 @@
-# Contributing to Rprecommit
+# Contributing to captain
 
-This outlines how to propose a change to Rprecommit.
+This outlines how to propose a change to captain.
 
 ### Fixing typos
 
@@ -15,14 +15,14 @@ bug, create an associated issue and illustrate the bug with a minimal example.
 
 ### Reports bugs
 
-Report bugs at <https://github.com/alexym1/Rprecommit/issues>.
+Report bugs at <https://github.com/alexym1/captain/issues>.
 
 ### Contribution
 
 * 1. Clone the repo
 
     ```
-    git clone git@github.com:alexym1/Rprecommit.git
+    git clone git@github.com:alexym1/captain.git
     ```
 
 * 2. Create a branch for latest `master` or `main` branch.
@@ -40,7 +40,7 @@ Report bugs at <https://github.com/alexym1/Rprecommit/issues>.
 
     ```
     # Run coverage of unit tests
-    detach("package:Rprecommit", unload=TRUE)
+    detach("package:captain", unload=TRUE)
     covr::package_coverage()
     ```
 

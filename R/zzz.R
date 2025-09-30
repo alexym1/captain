@@ -1,3 +1,3 @@
-.onAttach <- function(libname = find.package("Rprecommit"), pkgname = "Rprecommit") {
-  packageStartupMessage("WARNING: Rprecommit encounters some issues on Positron IDE.")
+.onAttach <- function(libname = find.package("captain"), pkgname = "captain") {
+  packageStartupMessage("WARNING: captain encounters some issues on Positron IDE.")
 }

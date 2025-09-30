@@ -8,10 +8,13 @@
 #' @param description A brief description of what the hook does
 #' @param language The programming language or environment for the hook (default is "system")
 #' @param always_run Logical, whether the hook should always run (default is TRUE)
+#' 
+#' @returns cli messages related to the creation of the hook and updating the config file. Create `inst/pre-commit/hooks/{filename}.R` script and update `.pre-commit-config.y*ml` file.
 #'
 #' @importFrom yaml verbatim_logical write_yaml  yaml.load_file
 #' @importFrom fs file_exists
 #' @importFrom cli cli_alert_danger cli_alert_success cli_div
+#' 
 #'
 #' @export
 create_precommit_hook <- function(filename, id, name, description, language = "system", always_run = TRUE) {
@@ -83,7 +86,7 @@ create_hook_script <- function(name) {
     "# If failed return status 1",
     "# quit(save = \"no\", status = 1, runLast = FALSE)",
     "",
-    "# Get more inspiration at https://github.com/alexym1/Rprecommit/tree/master/inst/pre-commit/hooks"
+    "# Get more inspiration at https://github.com/alexym1/captain/tree/master/inst/pre-commit/hooks"
   )
   return(template)
 }

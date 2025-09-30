@@ -11,6 +11,9 @@ install_precommit(force = FALSE, ...)
 
 \item{...}{additional arguments to pass to \code{create_precommit_config()}}
 }
+\value{
+cli messages related to the installation of pre-commit files. Create \code{inst/pre-commit} folder and \code{.git/hooks/pre-commit} file.
+}
 \description{
 Install pre-commit file in the repo.
 }

@@ -1,10 +1,10 @@
 ---
-title: "Introduction to Rprecommit"
+title: "Introduction to captain"
 output: rmarkdown::html_vignette
 description: >
-  Start here if this is your first time using Rprecommit.
+  Start here if this is your first time using captain.
 vignette: >
-  %\VignetteIndexEntry{Introduction to Rprecommit}
+  %\VignetteIndexEntry{Introduction to captain}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,7 +21,7 @@ Git hook scripts are useful for identifying simple issues before submission to c
 # How it works
 
 ```{r eval = FALSE}
-Rprecommit::install_precommit()
+captain::install_precommit()
 
 #> Install `.git/hooks/pre-commit` file
 #> Install `inst/pre-commit folder`
@@ -29,7 +29,7 @@ Rprecommit::install_precommit()
 
 
 ```{r eval = FALSE}
-Rprecommit::run_precommit()
+captain::run_precommit()
 ```
 
 
