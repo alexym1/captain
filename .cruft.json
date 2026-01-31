@@ -1,7 +1,7 @@
 {
   "template": "https://github.com/alexym1/R-project-template.git",
-  "commit": "e107ab52a4f82426305ce00e191789efbffa080e",
-  "checkout": "main",
+  "commit": "59133e8c9e59803833d4c5c567792e398574b247",
+  "checkout": null,
   "context": {
     "cookiecutter": {
       "full_name": "Alex MARTINEZ",
@@ -16,7 +16,7 @@
         ".github/workflows/*yaml"
       ],
       "_template": "https://github.com/alexym1/R-project-template.git",
-      "_commit": "e107ab52a4f82426305ce00e191789efbffa080e"
+      "_commit": "59133e8c9e59803833d4c5c567792e398574b247"
     }
   },
   "directory": null
