@@ -1,0 +1,23 @@
+{
+  "template": "https://github.com/alexym1/R-project-template.git",
+  "commit": "e107ab52a4f82426305ce00e191789efbffa080e",
+  "checkout": "main",
+  "context": {
+    "cookiecutter": {
+      "full_name": "Alex MARTINEZ",
+      "email": "yahiaoui-martinez.alex@outlook.com",
+      "github_username": "alexym1",
+      "project_name": "captain",
+      "project_slug": "captain",
+      "project_short_description": "Running 'git' Pre-Commit Hooks",
+      "repo_visibility": "public",
+      "__gh_slug": "alexym1/captain",
+      "_copy_without_render": [
+        ".github/workflows/*yaml"
+      ],
+      "_template": "https://github.com/alexym1/R-project-template.git",
+      "_commit": "e107ab52a4f82426305ce00e191789efbffa080e"
+    }
+  },
+  "directory": null
+}
