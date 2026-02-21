@@ -75,4 +75,3 @@ test_that(".template_content() returns a character vector with a shebang line", 
   expect_true(length(tmpl) > 0)
   expect_equal(tmpl[1], "#!/usr/bin/env Rscript")
 })
-

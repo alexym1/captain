@@ -71,4 +71,3 @@ test_that("install_precommit() returns invisible and warns when files exist and 
   result <- tryCatch(install_precommit(force = FALSE), error = function(e) NULL)
   expect_null(result)
 })
-
