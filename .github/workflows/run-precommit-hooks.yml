@@ -12,6 +12,3 @@ jobs:
 
       - name: Run precommit hooks
         uses: ./.github/actions/run-precommit-hooks
-        with:
-          target: "master"
-          source: ${{ github.head_ref }}
