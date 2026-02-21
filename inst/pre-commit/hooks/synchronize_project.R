@@ -2,8 +2,23 @@
 
 cli::cli_h1("Synchronize the project from the renv.lock")
 
-status <- renv::status()
-print(status$synchronized)
+project <- tryCatch({
+  root <- system2("git", c("rev-parse", "--show-toplevel"), stdout = TRUE, stderr = FALSE)
+  root <- trimws(root[1])
+  if (!nzchar(root)) {
+    getwd()
+  } else {
+    root
+  }
+}, error = function(e) {
+  getwd()
+})
+
+if (!file.exists(file.path(project, "renv.lock"))) {
+  project <- getwd()
+}
+
+status <- renv::status(project = project)
 
 if(is.null(status$synchronized) || status$synchronized == TRUE){
   cli::cli_alert_success("Restore project library from a lockfile")
