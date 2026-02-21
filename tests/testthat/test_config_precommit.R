@@ -60,9 +60,10 @@ test_that("run_precommit() returns 0 when all hooks succeed", {
   with_tempdir({
     dir.create("inst/pre-commit/hooks", recursive = TRUE)
     writeLines("quit(save='no', status=0, runLast=FALSE)", "inst/pre-commit/hooks/ok_hook.R")
+    rscript <- file.path(R.home("bin"), "Rscript")
     config <- list(repos = list(list(
       repo = "local",
-      hooks = list(list(id = "ok_hook", entry = "Rscript inst/pre-commit/hooks/ok_hook.R"))
+      hooks = list(list(id = "ok_hook", entry = paste(rscript, "inst/pre-commit/hooks/ok_hook.R")))
     )))
     yaml::write_yaml(config, "inst/pre-commit/.pre-commit-config.yml")
     result <- run_precommit()
@@ -74,9 +75,10 @@ test_that("run_precommit() returns failing status when a hook fails", {
   with_tempdir({
     dir.create("inst/pre-commit/hooks", recursive = TRUE)
     writeLines("quit(save='no', status=1, runLast=FALSE)", "inst/pre-commit/hooks/bad_hook.R")
+    rscript <- file.path(R.home("bin"), "Rscript")
     config <- list(repos = list(list(
       repo = "local",
-      hooks = list(list(id = "bad_hook", entry = "Rscript inst/pre-commit/hooks/bad_hook.R"))
+      hooks = list(list(id = "bad_hook", entry = paste(rscript, "inst/pre-commit/hooks/bad_hook.R")))
     )))
     yaml::write_yaml(config, "inst/pre-commit/.pre-commit-config.yml")
     result <- run_precommit()
