@@ -111,7 +111,6 @@ template_precommit_file <- function() {
     )
   )
 
-  yaml_file <- as.yaml(config, indent.mapping.sequence = TRUE)
   tmp_file <- tempfile(fileext = ".yml")
   write_yaml(config, tmp_file)
 
