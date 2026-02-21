@@ -57,6 +57,9 @@ install_deps <- function(path_folder, path_file, overwrite = FALSE, ...) {
 
   file_copy(precommit_file(), path_file, overwrite = overwrite)
   system(paste("dos2unix", precommit_file()))
+  if (.Platform$OS.type != "windows") {
+    system(paste("chmod +x", path_file))
+  }
   cli_alert_success("{.emph .git/hooks/pre-commit} file has been created.")
 
   create_precommit_config(force = overwrite, ...)
