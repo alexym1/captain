@@ -9,7 +9,7 @@
 #'
 #' @importFrom fs file_copy dir_copy
 #' @importFrom cli cli_alert_success cli_div cli_h1 cli_alert_danger
-#' 
+#'
 #'
 #' @export
 install_precommit <- function(force = FALSE, ...) {
@@ -25,7 +25,9 @@ install_precommit <- function(force = FALSE, ...) {
     }
   )
 
-  if (is.null(root)) return(invisible())
+  if (is.null(root)) {
+    return(invisible())
+  }
 
   path_folder <- file.path(root, "inst", "pre-commit")
   path_file <- file.path(root, ".git", "hooks", "pre-commit")

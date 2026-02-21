@@ -22,4 +22,4 @@ runs:
         Rscript -e 'install.packages("devtools")'
         Rscript -e 'devtools::install()'
         Rscript -e 'captain::install_precommit(force=TRUE)'
-        Rscript -e 'captain::run_precommit()'
+        Rscript -e 'status <- captain::run_precommit(); status <- if (is.null(status)) 1L else as.integer(status); quit(save = "no", status = status, runLast = FALSE)'

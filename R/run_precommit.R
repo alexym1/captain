@@ -6,7 +6,7 @@
 #'
 #' @importFrom fs file_exists
 #' @importFrom cli cli_div cli_alert_danger
-#' 
+#'
 #' @returns cli message related to the run of all git precommit hooks.
 #'
 #' @export
