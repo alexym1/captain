@@ -47,6 +47,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
   write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
 
   cli_alert_success("{.emph {filename}} has been created.")
+  return(invisible())
 }
 
 

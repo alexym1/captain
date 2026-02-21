@@ -67,4 +67,6 @@ run_precommit <- function(path = ".git/hooks/pre-commit") {
   } else {
     cli_alert_danger("No {.emph inst/pre-commit/.pre-commit-config.y*ml} file found. Run `install_precommit()`.")
   }
+
+  return(invisible())
 }
