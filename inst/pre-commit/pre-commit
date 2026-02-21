@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pre-commit run --config inst/pre-commit/.pre-commit-config.y*ml
+Rscript -e "if (!requireNamespace('captain', quietly = TRUE)) { cat('❌ captain package is not installed.\n'); quit(save = 'no', status = 1, runLast = FALSE) }; captain::run_precommit()"
 
 STATUS=$?
 
