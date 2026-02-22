@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/alexym1/captain/blob/master/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/alexym1/captain/blob/v1.2.0/DESCRIPTION)
 
 Yahiaoui Martinez A (2026). *captain: Running 'git' Pre-Commit Hooks*. R
 package version 1.2.0, <https://github.com/alexym1/captain>.
