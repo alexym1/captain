@@ -60,7 +60,7 @@ install_deps <- function(path_folder, path_file, overwrite = FALSE, ...) {
   cli_alert_success("{.emph inst/pre-commit} folder has been created.")
 
   file_copy(precommit_file(), path_file, overwrite = overwrite)
-  system(paste("dos2unix", path_file))
+  system2("dos2unix", args = path_file)
   Sys.chmod(path_file, mode = "0755")
   cli_alert_success("{.emph .git/hooks/pre-commit} file has been created.")
 
