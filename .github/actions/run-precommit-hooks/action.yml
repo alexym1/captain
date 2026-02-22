@@ -5,6 +5,13 @@ runs:
   steps:
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.4.3'
+
+    - name: Set up renv and restore lockfile
+      uses: r-lib/actions/setup-renv@v2
+      with:
+        cache-version: 1
 
     - name: Install dos2unix
       shell: bash
@@ -13,7 +20,6 @@ runs:
     - name: run precommit hooks
       shell: bash
       run: |
-        Rscript -e 'install.packages("devtools")'
-        Rscript -e 'devtools::install()'
+        R CMD INSTALL .
         Rscript -e 'captain::install_precommit(force=TRUE)'
-        Rscript -e 'captain::run_precommit()'
+        Rscript -e 'status <- captain::run_precommit(); status <- if (is.null(status)) 1L else as.integer(status); quit(save = "no", status = status, runLast = FALSE)'

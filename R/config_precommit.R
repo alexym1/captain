@@ -4,7 +4,7 @@
 #'
 #' @param filename the name of the file to create
 #' @param force overwrite the file if it already exists
-#' 
+#'
 #' @returns cli messages related to the creation and edition of the `.pre-commit-config` file.
 #'
 #' @details
@@ -47,6 +47,7 @@ create_precommit_config <- function(filename = path_precommit_files()[1], force 
   write_yaml(config_file, filename, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
 
   cli_alert_success("{.emph {filename}} has been created.")
+  return(invisible())
 }
 
 
@@ -111,7 +112,6 @@ template_precommit_file <- function() {
     )
   )
 
-  yaml_file <- as.yaml(config, indent.mapping.sequence = TRUE)
   tmp_file <- tempfile(fileext = ".yml")
   write_yaml(config, tmp_file)
 

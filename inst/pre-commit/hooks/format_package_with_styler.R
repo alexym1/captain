@@ -4,10 +4,10 @@ cli::cli_h1("Format package with styler")
 
 summary_styler <- styler::style_pkg()
 
-if(!all(summary_styler$changed)){
-  cli::cli_alert_success("No changed.")
+if (!any(summary_styler$changed)) {
+  cli::cli_alert_success("No changes.")
   quit(save = "no", status = 0, runLast = FALSE)
 }
 
-cli::cli_alert_danger("Some files has been changed. Please add and commit them.")
+cli::cli_alert_danger("Some files have been changed. Please add and commit them.")
 quit(save = "no", status = 1, runLast = FALSE)
