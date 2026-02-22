@@ -87,6 +87,8 @@ Handle .pre-commit-config file.
   : Handle .pre-commit-config file
 - [`create_precommit_hook()`](https://alexym1.github.io/captain/reference/create_precommit_hook.md)
   : Create pre-commit hooks
+- [`toggle_precommit_hook()`](https://alexym1.github.io/captain/reference/toggle_precommit_hook.md)
+  : Toggle pre-commit hooks
 
 ## Run
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## captain 1.2.0
+
+- Fix CI related to precommit
+  ([\#12](https://github.com/alexym1/captain/issues/12))
+- Add lintr as new hook
+  ([\#13](https://github.com/alexym1/captain/issues/13))
+- add `toggle_precommit_hook` to enable/disable hooks
+  ([\#13](https://github.com/alexym1/captain/issues/13))
+
 ## captain 1.1.1
 
 CRAN release: 2025-09-30
