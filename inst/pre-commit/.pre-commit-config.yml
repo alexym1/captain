@@ -22,3 +22,10 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
+      - id: lintr
+        name: Lint package with lintr
+        description: Lint your R package using lintr
+        entry: Rscript inst/pre-commit/hooks/lint_package_with_lintr.R
+        language: system
+        pass_filenames: false
+        always_run: true

@@ -74,6 +74,95 @@ edit_precommit_config <- function() {
   file.edit(paths[index])
 }
 
+#' Toggle pre-commit hooks
+#'
+#' Enable or disable individual hooks in the `.pre-commit-config.y*ml` file.
+#'
+#' @param ... One or more named lists, each with fields:
+#'   \describe{
+#'     \item{`id`}{Character. The hook ID to toggle.}
+#'     \item{`enable`}{Logical. `TRUE` to enable the hook, `FALSE` to disable it. Defaults to `TRUE`.}
+#'   }
+#'
+#' @returns cli messages describing the result. When disabled, the hook's `stages` field is set to `[manual]`
+#' so it is skipped during normal git runs. When enabled, the `stages` restriction is removed.
+#'
+#' @details
+#' Disabling a hook sets `stages: [manual]` on the hook entry, which tells pre-commit to skip it during
+#' normal git commits. The hook can then only be triggered explicitly with `pre-commit run --hook-stage manual`.
+#' Enabling a hook removes the `stages` field, restoring default behaviour.
+#'
+#' @examples
+#' \dontrun{
+#' toggle_precommit_hook(
+#'   list(id = "lintr", enable = FALSE),
+#'   list(id = "styler", enable = TRUE)
+#' )
+#' }
+#'
+#' @importFrom yaml verbatim_logical write_yaml yaml.load_file
+#' @importFrom fs file_exists
+#' @importFrom cli cli_alert_danger cli_alert_success cli_alert_info cli_alert_warning cli_div
+#'
+#' @export
+toggle_precommit_hook <- function(...) {
+  hooks <- list(...)
+
+  cli_div(theme = list(span.emph = list(color = "orange")))
+
+  if (length(hooks) == 0) {
+    cli_alert_danger("No hooks provided. Pass at least one {.emph list(id = \"...\", enable = TRUE/FALSE)}.")
+    return(invisible())
+  }
+
+  files <- path_precommit_files()
+  found_files <- unlist(lapply(files, file_exists))
+
+  if (all(found_files)) {
+    cli_alert_danger("Multiple pre-commit config files found. Keep only one and re-run `toggle_precommit_hook()`.")
+    return(invisible())
+  }
+
+  if (all(!found_files)) {
+    cli_alert_danger("{.emph inst/pre-commit/.pre-commit-config.y*ml} doesn't exist. Run `install_precommit()`.")
+    return(invisible())
+  }
+
+  config_file <- files[found_files]
+  config <- yaml.load_file(config_file)
+  hook_ids <- vapply(config$repos[[1]]$hooks, `[[`, character(1), "id")
+
+  requested_ids <- vapply(hooks, function(h) h[["id"]], character(1))
+  unknown <- setdiff(requested_ids, hook_ids)
+
+  if (length(unknown) > 0) {
+    cli_alert_danger("Hook(s) not found in config: {.emph {paste(unknown, collapse = ', ')}}.")
+    return(invisible())
+  }
+
+  for (h in hooks) {
+    hook_id <- h[["id"]]
+    enable <- if (is.null(h[["enable"]])) TRUE else h[["enable"]]
+    idx <- which(hook_ids == hook_id)
+
+    if (enable) {
+      config$repos[[1]]$hooks[[idx]][["stages"]] <- NULL
+      cli_alert_success("Hook {.emph {hook_id}} has been enabled.")
+    } else {
+      if (identical(config$repos[[1]]$hooks[[idx]][["stages"]], list("manual"))) {
+        cli_alert_info("Hook {.emph {hook_id}} is already disabled.")
+      } else {
+        config$repos[[1]]$hooks[[idx]][["stages"]] <- list("manual")
+        cli_alert_warning("Hook {.emph {hook_id}} has been disabled.")
+      }
+    }
+  }
+
+  write_yaml(config, config_file, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
+  return(invisible())
+}
+
+
 template_precommit_file <- function() {
   config <- list(
     repos = list(
@@ -103,6 +192,15 @@ template_precommit_file <- function() {
             name = "Check coverage",
             description = "Test coverage for your R package",
             entry = "Rscript inst/pre-commit/hooks/check_coverage.R",
+            language = "system",
+            pass_filenames = FALSE,
+            always_run = TRUE
+          ),
+          list(
+            id = "lintr",
+            name = "Lint package with lintr",
+            description = "Lint your R package using lintr",
+            entry = "Rscript inst/pre-commit/hooks/lint_package_with_lintr.R",
             language = "system",
             pass_filenames = FALSE,
             always_run = TRUE

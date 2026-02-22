@@ -7,7 +7,7 @@
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/captain)](https://cran.r-project.org/package=captain)
 [![](https://cranlogs.r-pkg.org/badges/captain)](https://cran.r-project.org/package=captain)
-![](https://img.shields.io/badge/github%20version-1.1.1-orange.svg)
+![](https://img.shields.io/badge/github%20version-1.2.0-green.svg)
 [![R-CMD-check](https://github.com/alexym1/captain/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/alexym1/captain/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/alexym1/captain/branch/master/graph/badge.svg)](https://app.codecov.io/gh/alexym1/captain?branch=master)

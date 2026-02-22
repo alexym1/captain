@@ -1,3 +1,10 @@
+# captain 1.2.0
+
+* Fix CI related to precommit (#12)
+* Add lintr as new hook (#13)
+* add `toggle_precommit_hook` to enable/disable hooks (#13)
+
+
 # captain 1.1.1
 
 * Change name of the package from `Rprecommit` to `captain`

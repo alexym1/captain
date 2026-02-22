@@ -2,9 +2,9 @@
 
 cli::cli_h1("Format package with styler")
 
-summary_styler <- styler::style_pkg()
+summary_styler <- styler::style_pkg(include_roxygen_examples = FALSE)
 
-if (!any(summary_styler$changed)) {
+if (!any(summary_styler$changed, na.rm = TRUE)) {
   cli::cli_alert_success("No changes.")
   quit(save = "no", status = 0, runLast = FALSE)
 }
