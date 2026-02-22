@@ -20,6 +20,7 @@ Suggests:
     devtools,
     covr,
     knitr,
+    lintr,
     styler,
     testthat,
     withr
