@@ -19,6 +19,7 @@ reference:
   - create_precommit_config
   - create_precommit_hook
   - edit_precommit_config
+  - toggle_precommit_hook
 
 - title: Run
   desc:  Run pre-commit hooks.

@@ -156,3 +156,17 @@ test_that("edit_precommit_config() opens file when exactly one config file found
     expect_no_error(edit_precommit_config())
   })
 })
+
+make_toggle_config <- function(path = "inst/pre-commit/.pre-commit-config.yml") {
+  dir.create("inst/pre-commit", recursive = TRUE, showWarnings = FALSE)
+  config <- list(repos = list(list(
+    repo = "local",
+    hooks = list(
+      list(id = "renv", name = "renv", entry = "Rscript inst/pre-commit/hooks/synchronize_project.R", language = "system", pass_filenames = FALSE, always_run = TRUE),
+      list(id = "styler", name = "styler", entry = "Rscript inst/pre-commit/hooks/format_package_with_styler.R", language = "system", pass_filenames = FALSE, always_run = TRUE),
+      list(id = "lintr", name = "lintr", entry = "Rscript inst/pre-commit/hooks/lint_package_with_lintr.R", language = "system", pass_filenames = FALSE, always_run = TRUE)
+    )
+  )))
+  yaml::write_yaml(config, path, handlers = list(logical = yaml::verbatim_logical))
+  invisible(path)
+}
