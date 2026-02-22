@@ -158,7 +158,7 @@ toggle_precommit_hook <- function(...) {
     }
   }
 
-  write_yaml(config, config_file, handlers = list(logical = verbatim_logical), indent = 4)
+  write_yaml(config, config_file, indent.mapping.sequence = TRUE, handlers = list(logical = verbatim_logical))
   return(invisible())
 }
 
